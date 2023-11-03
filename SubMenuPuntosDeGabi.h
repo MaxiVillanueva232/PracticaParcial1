@@ -1,0 +1,5 @@
+#pragma once
+#include "ArchivoNuevo.h"
+/////////////////////////////////////////////////////////////////////
+void SubMenuPuntosDeGabi();
+void Punto1();
