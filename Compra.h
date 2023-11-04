@@ -45,4 +45,41 @@ public:
     Compra leerRegistro(int pos);
     int contarRegistros();
 
+//SOBRACARGA DE OPERADORES
+    bool operator<(int tamanio) {
+        if(this->_Importe > tamanio) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    bool operator<(const Compra &obj) {
+        if(this->_Importe < obj._Importe) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    bool operator==(const int *obj) {
+        if(this->_Importe == *obj) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    bool operator==(const Compra &obj) {
+        if(this->_Importe == obj._Importe) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+//CONSTRUCTORES
+    Compra(){}
+
+    Compra(int _Importe) : _Importe(_Importe) {}
 };

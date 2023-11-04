@@ -147,7 +147,7 @@ Compra Compra::leerRegistro(int pos)
     reg.setImporte(-1);
     FILE *p;
     p=fopen("compras.dat", "rb");
-    if(p==NULL) return reg;
+    if(p==NULL) return 0;
     fseek(p, sizeof(Compra)*pos,0);
     fread(&reg, sizeof reg,1, p);
     fclose(p);

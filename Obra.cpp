@@ -52,6 +52,22 @@ void Obra::Mostrar(){
     cout << "Activo: " <<getActivo()<< endl;
 }
 /******************************************************************/
+void Obra::ponerCero(){
+
+    char CodigoObra[] = "0";
+    char Direccion[] = "0";
+    int Provincia=0;
+    float Superficie=0;
+    int EstadoDeEjecion=0;
+    bool Activo=false;
+    setCodigoObra(CodigoObra);
+    setDireccion(Direccion);
+    setProvincia(Provincia);
+    setSuperficie(Superficie);
+    setEstadoDeEjecion(EstadoDeEjecion);
+    setActivo(Activo);
+}
+/******************************************************************/
 void Obra::MostrarArchivo(){
 Obra ClassM;
 FILE *p;
@@ -122,14 +138,25 @@ fclose(p);
 /******************************************************************/
 Obra Obra::leerRegistro(int pos){
     Obra reg;
-    reg.setProvincia(-1);
     FILE *p;
     p=fopen("obras.dat", "rb");
-    if(p==NULL) return reg;
+    if(p==NULL){
+        return 0;
+    }
+
     fseek(p, sizeof(Obra)*pos,0);
-    fread(&reg, sizeof reg,1, p);
+   
+    bool verificar =  fread(&reg, sizeof reg,1, p);
+
+    if(verificar==true){
+        return reg;
+    }else{
+        reg.ponerCero();
+        return reg;
+    }
+
     fclose(p);
-    return reg;
+    
 }
 /******************************************************************/
 int Obra::contarRegistros(){

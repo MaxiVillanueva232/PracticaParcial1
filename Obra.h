@@ -1,5 +1,8 @@
 #pragma once
 #include <string.h>
+#include <iostream>
+#include <cstring>
+
 
 class Obra{
 
@@ -30,6 +33,7 @@ public:
     
     void Cargar();
     void Mostrar();
+    void ponerCero();
 
     void MostrarArchivo();
     void CargarArchivo();
@@ -38,4 +42,41 @@ public:
 
     Obra leerRegistro(int pos);
     int contarRegistros();
+
+//SOBRACARGA DE OPERADORES
+    bool operator==(const float *obj) {
+        if(this->_Superficie == *obj) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    bool operator==(const Obra &obj) {
+        if(this->_Superficie == obj._Superficie) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    bool operator<(float tamanio) {
+        if(this->_Superficie > tamanio) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    bool operator<(const Obra &obj) {
+        if(this->_Superficie < obj._Superficie) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+//CONSTRUCTORES
+    Obra(float superficie) : _Superficie(superficie) {}
+    Obra(){}
 };

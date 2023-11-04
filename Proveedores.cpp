@@ -45,6 +45,17 @@ bool proveedores::leerDeDisco(int pos)
     fclose(p);
     return leyo;
 }
+proveedores proveedores::leerRegistro(int pos){
+    proveedores reg;
+    FILE *p;
+    p=fopen("provedores.dat", "rb");
+    if(p==NULL) return reg;
+    fseek(p, sizeof(proveedores)*pos,0);
+    fread(&reg, sizeof reg,1, p);
+    fclose(p);
+    return reg;
+}
+
 bool proveedores::grabarEnDisco()
 {
     FILE *p;

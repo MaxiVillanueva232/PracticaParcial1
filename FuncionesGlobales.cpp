@@ -25,3 +25,15 @@ void cargarCadena(char *variable, int tam){
     fflush(stdin);
 }
 /*****************************************************************/
+void ponerCeroVector(int vec[],int tam){
+    for(int i=0; i<tam; i++){
+        vec[i]=0;
+    }
+}
+/*****************************************************************/
+void MostrarVector(int vec[],int tam){
+    for(int i=0; i<tam; i++){
+        cout<<"vec[i] :"<<vec[i]<<endl;
+    }
+}
+/*****************************************************************/
