@@ -214,9 +214,14 @@ void _Punto3(){
             cout<<"Direccion: "<<vecDireccion[i]<<endl<<endl;
         }
     }
+    
+//LIBERAR MEMORIA DINAMICA
 
-delete vecNumProveedor;
-delete vecDireccion;
+    delete vecNumProveedor;
+
+    for(int i=0; i<tam; i++){
+    delete [] vecDireccion[i];
+    }
 }
 ///////////////////////////////////////////////////////////////////////////
 void _Punto4(int valor,int registro){
