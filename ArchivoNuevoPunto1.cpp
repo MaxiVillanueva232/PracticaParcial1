@@ -14,12 +14,13 @@ void ArchivoNuevoPunto1::setDireccionDeObra(const char *direccionDeObra)
 {
     strcpy(_direccionDeLaObra, direccionDeObra);
 }
+/******************************************************************/
 void ArchivoNuevoPunto1::setProvinciaDeObra(int provincia)
 {
     _provinciaDeLaObra = provincia;
 }
-bool ArchivoNuevoPunto1::grabarRegistro()
 /******************************************************************/
+bool ArchivoNuevoPunto1::grabarRegistro()
 {
     FILE *p;
     p = fopen("ArchivoNuevoPunto1.dat", "ab");

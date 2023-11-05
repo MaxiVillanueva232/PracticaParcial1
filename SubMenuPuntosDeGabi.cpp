@@ -185,6 +185,7 @@ void Punto3(){
 
     int *vecPrecio = new int[tam];
     char **vecNombre = new char*[tam];
+    
 
     //cargue todos incluyendo los que son Activo == falso
 
@@ -206,12 +207,18 @@ void Punto3(){
 
         if(((vecPrecio[i])>precioUnitario)&&(objM.getActivo()==true)){
             cout<<"Precio: "<<vecPrecio[i]<<endl;
-            cout<<"Nombre: "<<vecNombre[i]<<endl;
+            cout<<"Nombre: "<<vecNombre[i]<<endl<<endl;
         }
     }
 
-delete vecNombre;
-delete vecPrecio;
+
+//LIBERAR MEMORIA DINAMICA
+    for(int i=0; i<tam; i++){
+    delete [] vecNombre[i];
+    }
+
+    delete vecPrecio;
+
 }
 
 ///////////////////////////////////////////////////////////////////////////

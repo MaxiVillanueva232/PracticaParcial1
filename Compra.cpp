@@ -43,15 +43,6 @@ void Compra::Cargar()
     cin >> Importe;
     setImporte(Importe);
 
-    // cout<<"DIA:";
-    // cin>>dia;
-    // ObjC.getFecha().setDia(dia);
-    // cout<<"MES:";
-    // cin>>mes;
-    // ObjC.getFecha().setMes(mes);
-    // cout<<"Anio:";
-    // cin>>anio;
-    // ObjC.getFecha().setAnio(anio);
     fecha.Cargar();
     setFecha(fecha);
 
@@ -154,7 +145,6 @@ Compra Compra::leerRegistro(int pos)
     return reg;
 }
 /******************************************************************/
-
     int Compra::contarRegistros(){
          FILE *p;
     p=fopen("compras.dat", "rb");

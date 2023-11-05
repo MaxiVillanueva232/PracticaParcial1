@@ -17,8 +17,10 @@ private:
 public:
     void cargar();
     void mostrar();
+
     bool leerDeDisco(int);
     proveedores leerRegistro(int pos);
+    
     bool grabarEnDisco();
     void LimpiarArchivo();
     int contarRegistros();

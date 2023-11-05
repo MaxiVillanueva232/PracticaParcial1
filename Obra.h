@@ -80,3 +80,4 @@ public:
     Obra(float superficie) : _Superficie(superficie) {}
     Obra(){}
 };
+
