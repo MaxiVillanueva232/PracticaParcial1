@@ -196,7 +196,7 @@ void _Punto3(){
         objM = objM.leerRegistro(i);
         vecNumProveedor[i]=objM.getNumeroProveedor();
 
-        vecDireccion[i] = new char[50];  // Asignar memoria para cada vecNombre[i]
+        vecDireccion[i] = new char[50];  // Asignar memoria para cada vecDireccion[i]
         strcpy(vecDireccion[i], objM.getDireccion());
     }
 
