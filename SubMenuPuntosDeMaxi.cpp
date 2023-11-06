@@ -211,7 +211,7 @@ void _Punto3(){
 
         if((strcmp((vecDireccion[i]), direccion) == 0)&&(objM.getActivo()==true)){
             cout<<"Numero de proveedor: "<<vecNumProveedor[i]<<endl;
-            cout<<"Direccion: "<<vecDireccion[i]<<endl<<endl;
+            //cout<<"Direccion: "<<vecDireccion[i]<<endl<<endl;
         }
     }
     
